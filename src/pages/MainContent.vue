@@ -31,6 +31,8 @@ export default {
     CareerContent,
     ContactContent,
   },
-  data() {},
+  data() {
+    return {}
+  },
 };
 </script>
