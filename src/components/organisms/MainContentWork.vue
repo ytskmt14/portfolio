@@ -1,21 +1,18 @@
 <template>
   <v-row dense>
     <v-col cols="3">
-      <v-card>
+      <v-card v-for="work in workList" :key="work.id">
         <v-img
-          src="@/assets/work_1.png"
+          :src="work.thumb"
           class="white--text align-end"
           gradient="to bottom, rgba(0,0,0,.1), rgba(0,0,0,.5)"
           height="240px"
           contain
-          @click="windowOpen('https://step-up-camp-572f4.firebaseapp.com/')"
+          @click="windowOpen(work.url)"
         >
         </v-img>
-        <v-card-text
-          class="text-h6"
-          @click="windowOpen('https://step-up-camp-572f4.firebaseapp.com/')"
-          >
-          webページ制作
+        <v-card-text class="text-h6" @click="windowOpen(work.url)">
+          {{ work.title }}
         </v-card-text>
         <v-card-actions>
           <v-btn text @click="reveal = true"> more info... </v-btn>
@@ -30,78 +27,34 @@
             <v-card-text class="pb-0">
               <v-simple-table>
                 <tbody>
-                  <tr>
-                    <td>開発人数</td>
-                    <td>2人</td>
-                  </tr>
-                  <tr>
-                    <td>役割</td>
-                    <td>メイン開発者</td>
-                  </tr>
-                  <tr>
-                    <td>開発期間</td>
-                    <td>進行中（現在、phase2）</td>
-                  </tr>
-                  <tr>
-                    <td>使用技術</td>
-                    <td>
-                      <v-tooltip bottom>
+                  <tr
+                    v-for="(detailHeader, index) in detailHeaderList"
+                    :key="index"
+                  >
+                    <td>{{ detailHeader.val }}</td>
+                    <td v-if="detailHeader.id === 'usedTech'">
+                      <v-tooltip
+                        bottom
+                        v-for="(usedTech, index) in work.detail.usedTechList"
+                        :key="index"
+                      >
                         <template v-slot:activator="{ on, attrs }">
-                          <v-icon
-                            v-bind="attrs"
-                            v-on="on"
-                            class="mr-2"
-                          >mdi-vuejs</v-icon>
+                          <v-icon v-bind="attrs" v-on="on" class="mr-2">{{
+                            usedTech.icon
+                          }}</v-icon>
                         </template>
-                        <span>Vue.js</span>
-                      </v-tooltip>
-                      <v-tooltip bottom>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon
-                            v-bind="attrs"
-                            v-on="on"
-                            class="mr-2"
-                          >mdi-vuetify</v-icon>
-                        </template>
-                        <span>Vuetify</span>
-                      </v-tooltip>
-                      <v-tooltip bottom>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon
-                            v-bind="attrs"
-                            v-on="on"
-                            class="mr-2"
-                          >mdi-git</v-icon>
-                        </template>
-                        <span>git</span>
-                      </v-tooltip>
-                      <v-tooltip bottom>
-                        <template v-slot:activator="{ on, attrs }">
-                          <v-icon
-                            v-bind="attrs"
-                            v-on="on"
-                            class="mr-2"
-                          >mdi-github</v-icon>
-                        </template>
-                        <span>github</span>
+                        <span>{{ usedTech.name }}</span>
                       </v-tooltip>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>コード</td>
-                    <td>
+                    <td v-else-if="detailHeader.id === 'code'">
                       <v-icon>mdi-github</v-icon>
-                      <a
-                        href="https://github.com/ytskmt14/step-up-camp-lp"
-                        style="text-decoration: none;"
-                        >
-                        step-up-camp-lp
+                      <a :href="work.detail.code" style="text-decoration: none">
+                        {{ work.detail.repoName }}
                       </a>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>ひとこと</td>
-                    <td>初の共同開発！よりよくしていきます！</td>
+                    <td v-else>
+                      {{ work.detail[detailHeader.id] }}
+                    </td>
                   </tr>
                 </tbody>
               </v-simple-table>
@@ -121,13 +74,73 @@ export default {
   data() {
     return {
       reveal: false,
+      detailHeaderList: [
+        {
+          id: "teamMember",
+          val: "開発人数",
+        },
+        {
+          id: "position",
+          val: "役割",
+        },
+        {
+          id: "devTerm",
+          val: "開発期間",
+        },
+        {
+          id: "usedTech",
+          val: "使用技術",
+        },
+        {
+          id: "code",
+          val: "コード",
+        },
+        {
+          id: "comment",
+          val: "ひとこと",
+        },
+      ],
+      workList: [
+        {
+          id: 1,
+          title: "webページ制作",
+          thumb: require("@/assets/work_1.png"),
+          url: "https://step-up-camp-572f4.firebaseapp.com/",
+          detail: {
+            teamMember: "2人",
+            position: "メイン開発者",
+            devTerm: "進行中（現在、phase2）",
+            usedTechList: [
+              {
+                icon: "mdi-vuejs",
+                name: "Vue.js",
+              },
+              {
+                icon: "mdi-vuetify",
+                name: "Vuetify",
+              },
+              {
+                icon: "mdi-git",
+                name: "git",
+              },
+              {
+                icon: "mdi-github",
+                name: "github",
+              },
+            ],
+            code: "https://github.com/ytskmt14/step-up-camp-lp",
+            repoName: "step-up-camp-lp",
+            comment: "初の共同開発！よりよくしていきます！",
+          },
+        },
+      ],
     };
   },
   methods: {
-    windowOpen(url){
-      window.open(url, "_blank")
-    }
-  }
+    windowOpen(url) {
+      window.open(url, "_blank");
+    },
+  },
 };
 </script>
 
