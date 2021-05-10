@@ -44,4 +44,10 @@ export default {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   color: #6a696c;
 }
+
+a {
+  color: #6a696c;
+  text-decoration: none;
+}
+
 </style>

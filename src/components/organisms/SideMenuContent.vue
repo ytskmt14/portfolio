@@ -30,16 +30,8 @@ export default {
         { title: "About", icon: "mdi-account", link: "#about" },
         { title: "Work", icon: "mdi-dev-to", link: "#work" },
         { title: "Skill", icon: "mdi-puzzle", link: "#skill" },
-        { title: "Contact", icon: "mdi-account-box", link: "#contact" },
       ],
     };
   },
 };
 </script>
-
-<style scoped>
-a {
-  text-decoration: none;
-  text-decoration-color: #6a696c;
-}
-</style>
