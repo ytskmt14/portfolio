@@ -3,8 +3,8 @@
     <v-col cols="12">
       <div id="work">My works</div>
     </v-col>
-    <v-col cols="3">
-      <v-card v-for="work in workList" :key="work.id">
+    <v-col cols="3" v-for="(work, index) in workList" :key="index">
+      <v-card elevation="2" class="mx-2">
         <v-img
           :src="work.thumb"
           class="white--text align-end"
@@ -18,12 +18,12 @@
           {{ work.title }}
         </v-card-text>
         <v-card-actions>
-          <v-btn text @click="reveal = true"> more info... </v-btn>
+          <v-btn text @click="work.reveal = true"> more info... </v-btn>
         </v-card-actions>
 
         <v-expand-transition>
           <v-card
-            v-if="reveal"
+            v-if="work.reveal"
             class="transition-fast-in-fast-out v-card--reveal"
             style="height: 100%"
           >
@@ -63,7 +63,7 @@
               </v-simple-table>
             </v-card-text>
             <v-card-actions class="pt-0">
-              <v-btn text @click="reveal = false"> Close </v-btn>
+              <v-btn text @click="work.reveal = false"> Close </v-btn>
             </v-card-actions>
           </v-card>
         </v-expand-transition>
@@ -76,7 +76,6 @@
 export default {
   data() {
     return {
-      reveal: false,
       detailHeaderList: [
         {
           id: "teamMember",
@@ -105,9 +104,41 @@ export default {
       ],
       workList: [
         {
-          id: 1,
+          reveal: false,
+          title: "ポートフォリオ制作",
+          thumb: require("@/assets/my-portfolio.png"),
+          url: "",
+          detail: {
+            teamMember: "1人",
+            position: "メイン開発者",
+            devTerm: "done!",
+            usedTechList: [
+              {
+                icon: "mdi-vuejs",
+                name: "Vue.js",
+              },
+              {
+                icon: "mdi-vuetify",
+                name: "Vuetify",
+              },
+              {
+                icon: "mdi-git",
+                name: "git",
+              },
+              {
+                icon: "mdi-github",
+                name: "github",
+              },
+            ],
+            code: "https://github.com/ytskmt14/step-up-camp-lp",
+            repoName: "moc-portfolio",
+            comment: "デザインもっとかっこよくしたい！",
+          },
+        },
+        {
+          reveal: false,
           title: "webページ制作",
-          thumb: require("@/assets/work_1.png"),
+          thumb: require("@/assets/step-up-camp-web.png"),
           url: "https://step-up-camp-572f4.firebaseapp.com/",
           detail: {
             teamMember: "2人",

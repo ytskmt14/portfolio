@@ -19,24 +19,6 @@
                 珈琲も大好き。<br />
                 休日はだいたい自分で淹れた珈琲飲みながら開発してます。
               </v-card-text>
-
-              <v-card-actions>
-                <v-row
-                  align="center"
-                  justify="end"
-                  >
-                  <span class="mr-2">
-                    <a href="https://twitter.com/sorigeeeen">
-                      <v-icon>mdi-twitter</v-icon>
-                    </a>
-                  </span>
-                  <span>
-                    <a href="https://github.com/ytskmt14">
-                      <v-icon>mdi-github</v-icon>
-                    </a>
-                  </span>
-                </v-row>
-              </v-card-actions>
             </div>
           </div>
         </v-card>
