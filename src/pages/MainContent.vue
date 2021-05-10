@@ -9,7 +9,7 @@
     </v-col>
     <v-divider />
     <v-col cols="12">
-      <CareerContent />
+      <SkillContent />
     </v-col>
     <v-divider />
     <v-col cols="12">
@@ -21,14 +21,14 @@
 <script>
 import AboutContent from "../components/organisms/MainContentAbout";
 import WorkContent from "../components/organisms/MainContentWork";
-import CareerContent from "../components/organisms/MainContentCareer";
+import SkillContent from "../components/organisms/MainContentSkill";
 import ContactContent from "../components/organisms/MainContentContact";
 
 export default {
   components: {
     AboutContent,
     WorkContent,
-    CareerContent,
+    SkillContent,
     ContactContent,
   },
   data() {

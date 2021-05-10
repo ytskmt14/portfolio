@@ -13,7 +13,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <v-list-item-title>{{ item.title }}</v-list-item-title>
+          <a :href="item.link"><v-list-item-title v-text="item.title"></v-list-item-title></a>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -27,12 +27,19 @@ export default {
       drawer: true,
       mini: true,
       items: [
-        { title: "About", icon: "mdi-account" },
-        { title: "Work", icon: "mdi-dev-to" },
-        { title: "Career", icon: "mdi-history" },
-        { title: "Contact", icon: "mdi-account-box" },
+        { title: "About", icon: "mdi-account", link: "#about" },
+        { title: "Work", icon: "mdi-dev-to", link: "#work" },
+        { title: "Skill", icon: "mdi-puzzle", link: "#skill" },
+        { title: "Contact", icon: "mdi-account-box", link: "#contact" },
       ],
     };
   },
 };
 </script>
+
+<style scoped>
+a {
+  text-decoration: none;
+  text-decoration-color: #6a696c;
+}
+</style>
