@@ -107,7 +107,7 @@ export default {
           reveal: false,
           title: "ポートフォリオ制作",
           thumb: require("@/assets/my-portfolio.png"),
-          url: "",
+          url: "https://ytskmt14.github.io/portfolio/",
           detail: {
             teamMember: "1人",
             position: "メイン開発者",
@@ -130,7 +130,7 @@ export default {
                 name: "github",
               },
             ],
-            code: "https://github.com/ytskmt14/step-up-camp-lp",
+            code: "https://github.com/ytskmt14/portfolio",
             repoName: "moc-portfolio",
             comment: "デザインもっとかっこよくしたい！",
           },
