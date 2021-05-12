@@ -13,7 +13,7 @@
         </v-list-item-icon>
 
         <v-list-item-content>
-          <a :href="item.link"><v-list-item-title v-text="item.title"></v-list-item-title></a>
+          <a href="#" v-scroll-to="item.link"><v-list-item-title v-text="item.title"></v-list-item-title></a>
         </v-list-item-content>
       </v-list-item>
     </v-list>

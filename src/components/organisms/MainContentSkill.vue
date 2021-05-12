@@ -1,50 +1,53 @@
 <template>
   <div>
     <div id="skill">
-      My Skill
-      <v-dialog v-model="dialog">
-        <template v-slot:activator="{ on, attrs }">
-          <v-icon v-on="on" v-bind="attrs"> mdi-help-circle-outline </v-icon>
-        </template>
+      <div class="mb-2">
+        <span class="text-h5 mr-2">My Skill</span>
+      
+        <v-dialog v-model="dialog">
+          <template v-slot:activator="{ on, attrs }">
+            <v-icon v-on="on" v-bind="attrs"> mdi-help-circle-outline </v-icon>
+          </template>
 
-        <v-card>
-          <v-card-title> レベルの目安 </v-card-title>
-          <v-card-text>
-            <v-simple-table>
-              <thead>
-                <tr>
-                  <th>レベル</th>
-                  <th>説明</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><v-rating readonly :value="1"></v-rating></td>
-                  <td>Hello Worldやりました</td>
-                </tr>
-                <tr>
-                  <td><v-rating readonly :value="2"></v-rating></td>
-                  <td>趣味で少し触ったことがある</td>
-                </tr>
-                <tr>
-                  <td><v-rating readonly :value="3"></v-rating></td>
-                  <td>
-                    業務で使ったことがある or 完全に理解した
-                  </td>
-                </tr>
-                <tr>
-                  <td><v-rating readonly :value="4"></v-rating></td>
-                  <td>業務で日常的に使っている or なにもわからない</td>
-                </tr>
-                <tr>
-                  <td><v-rating readonly :value="5"></v-rating></td>
-                  <td>チョットデキル</td>
-                </tr>
-              </tbody>
-            </v-simple-table>
-          </v-card-text>
-        </v-card>
-      </v-dialog>
+          <v-card>
+            <v-card-title> レベルの目安 </v-card-title>
+            <v-card-text>
+              <v-simple-table>
+                <thead>
+                  <tr>
+                    <th>レベル</th>
+                    <th>説明</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><v-rating readonly :value="1"></v-rating></td>
+                    <td>Hello Worldやりました</td>
+                  </tr>
+                  <tr>
+                    <td><v-rating readonly :value="2"></v-rating></td>
+                    <td>趣味で少し触ったことがある</td>
+                  </tr>
+                  <tr>
+                    <td><v-rating readonly :value="3"></v-rating></td>
+                    <td>
+                      業務で使ったことがある or 完全に理解した
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><v-rating readonly :value="4"></v-rating></td>
+                    <td>業務で日常的に使っている or なにもわからない</td>
+                  </tr>
+                  <tr>
+                    <td><v-rating readonly :value="5"></v-rating></td>
+                    <td>チョットデキル</td>
+                  </tr>
+                </tbody>
+              </v-simple-table>
+            </v-card-text>
+          </v-card>
+        </v-dialog>
+      </div>
     </div>
     <v-row dense>
       <v-col cols="4">

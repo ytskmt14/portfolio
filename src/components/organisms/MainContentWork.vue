@@ -1,7 +1,7 @@
 <template>
   <v-row dense>
     <v-col cols="12">
-      <div id="work">My works</div>
+      <div id="work" class="text-h5">My works</div>
     </v-col>
     <v-col cols="3" v-for="(work, index) in workList" :key="index">
       <v-card elevation="2" class="mx-2">

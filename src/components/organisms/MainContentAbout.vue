@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div id="about">
     <v-row dense>
       <v-col cols="12">
-        <div id="about">About Me</div>
+        <div class="text-h5">About Me</div>
       </v-col>
       <v-col cols="12">
         <v-card flat>

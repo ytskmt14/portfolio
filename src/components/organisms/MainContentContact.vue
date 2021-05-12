@@ -1,6 +1,6 @@
 <template>
   <div id="contact">
-    <div>Contact</div>
+    <div class="text-h5">Contact</div>
     <v-card
       class="mx-auto"
       max-width="500"
