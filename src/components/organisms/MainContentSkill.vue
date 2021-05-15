@@ -50,7 +50,7 @@
       </div>
     </div>
     <v-row dense>
-      <v-col cols="4">
+      <v-col cols="12" md="4">
         <v-card>
           <v-card-title> Language </v-card-title>
           <v-card-text>
@@ -62,7 +62,11 @@
                 >
                   <td>{{ langSkillInfo.name }}</td>
                   <td>
-                    <v-rating readonly :value="langSkillInfo.level"></v-rating>
+                    <v-rating 
+                      readonly
+                      :value="langSkillInfo.level"
+                      small
+                      ></v-rating>
                   </td>
                 </tr>
               </tbody>
@@ -70,7 +74,7 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="12" md="4">
         <v-card>
           <v-card-title> Framework </v-card-title>
           <v-card-text>
@@ -82,7 +86,11 @@
                   >
                   <td>{{ frameworkSkillInfo.name }}</td>
                   <td>
-                    <v-rating readonly :value="frameworkSkillInfo.level"></v-rating>
+                    <v-rating
+                      readonly
+                      :value="frameworkSkillInfo.level"
+                      small
+                      ></v-rating>
                   </td>
                 </tr>
               </tbody>
@@ -90,11 +98,11 @@
           </v-card-text>
         </v-card>
       </v-col>
-      <v-col cols="4">
+      <v-col cols="12" md="4">
         <v-card>
           <v-card-title> Others </v-card-title>
           <v-card-text>
-            <v-simple-table dense>
+            <v-simple-table style="width: 100%" dense>
               <tbody>
                 <tr
                   v-for="(otherSkillInfo, index) in mySkill.otherList"
@@ -102,7 +110,11 @@
                   >
                   <td>{{ otherSkillInfo.name }}</td>
                   <td>
-                    <v-rating readonly :value="otherSkillInfo.level"> </v-rating>
+                    <v-rating
+                      readonly
+                      :value="otherSkillInfo.level"
+                      small
+                      ></v-rating>
                   </td>
                 </tr>
               </tbody>

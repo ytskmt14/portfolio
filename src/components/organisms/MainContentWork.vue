@@ -3,8 +3,8 @@
     <v-col cols="12">
       <div id="work" class="text-h5">My works</div>
     </v-col>
-    <v-col cols="3" v-for="(work, index) in workList" :key="index">
-      <v-card elevation="2" class="mx-2">
+    <v-col cols="12" md="3" v-for="(work, index) in workList" :key="index">
+      <v-card elevation="2" class="mx-4">
         <v-img
           :src="work.thumb"
           class="white--text align-end"

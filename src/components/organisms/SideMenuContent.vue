@@ -7,13 +7,23 @@
       </v-btn>
     </v-list-item>
     <v-list dense nav>
-      <v-list-item v-for="item in items" :key="item.title" link>
+      <v-list-item
+        v-for="item in items"
+        :key="item.title"
+        link
+        @click="drawer = !drawer"
+      >
         <v-list-item-icon>
           <v-icon>{{ item.icon }}</v-icon>
         </v-list-item-icon>
 
         <v-list-item-content>
-          <a href="#" v-scroll-to="item.link"><v-list-item-title v-text="item.title"></v-list-item-title></a>
+          <a
+            href="#"
+            v-scroll-to="item.link"
+            >
+            <v-list-item-title v-text="item.title" />
+          </a>
         </v-list-item-content>
       </v-list-item>
     </v-list>
@@ -24,7 +34,7 @@
 export default {
   data() {
     return {
-      drawer: true,
+      drawer: false,
       mini: true,
       items: [
         { title: "About", icon: "mdi-account", link: "#about" },
