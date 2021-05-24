@@ -4,12 +4,13 @@
       v-for="photo in photos"
       :key="photo.id"
       class="d-flex child-flex"
-      cols="3"
+      cols="12"
+      sm="6"
+      md="4"
     >
       <v-img 
         :src="photo.src"
         class="grey lighten-2"
-        max-height="360px"
         >
         <template>
           <v-card
