@@ -1,11 +1,9 @@
 <template>
   <v-app>
     <HeaderContent />
-    <v-content>
-      <v-container>
-        <MainContent />
-      </v-container>
-    </v-content>
+    <v-main>
+      <MainContent class="ml-3 mb-3" />
+    </v-main>
     <v-footer app padless color="#fff">
       <FooterContent />
     </v-footer>
@@ -27,8 +25,7 @@ export default {
   },
 
   data() {
-    return {
-    };
+    return {};
   },
 };
 </script>
@@ -44,5 +41,4 @@ a {
   color: #6a696c;
   text-decoration: none;
 }
-
 </style>
