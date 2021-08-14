@@ -6,7 +6,7 @@
         class="mx-3"
         icon
         >
-        <a href="https://twitter.com/sorigeeeen">
+        <a href="https://twitter.com/FukMoc">
           <v-icon
             color="#6a696c"
             >
